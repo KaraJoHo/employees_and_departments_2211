@@ -49,4 +49,42 @@ RSpec.describe Budget do
     end
   end
 
+  xdescribe '#employee_salaries' do 
+    it 'can list all employees salaries' do 
+      tech_support.hire(jermajesty) 
+      tech_support.hire(chip)
+      customer_service.hire(inigo)
+      customer_service.hire(tyler)
+
+      tech_support.expense(600)
+      customer_service.expense(200)
+
+      budget.add_department(customer_service)
+      budget.add_department(tech_support)
+
+      expected = {jermajesty => 100000, 
+                  chip => 90000,
+                  inigo => 120000,
+                  tyler => 85000}
+      expect(budget.employee_salaries).to eq(expected)
+    end
+  end
+
+  describe '#all_employees' do 
+    it 'is a list of all employees' do 
+      tech_support.hire(jermajesty) 
+      tech_support.hire(chip)
+      customer_service.hire(inigo)
+      customer_service.hire(tyler)
+
+      tech_support.expense(600)
+      customer_service.expense(200)
+
+      budget.add_department(customer_service)
+      budget.add_department(tech_support)
+
+      expect(budget.all_employees).to eq([jermajesty, chip, inigo, tyler])
+    end
+  end
+
 end
