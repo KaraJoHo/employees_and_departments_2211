@@ -87,4 +87,47 @@ RSpec.describe Budget do
     end
   end
 
+  describe '#department_expense_log' do 
+    it 'tracks the departments expenses and employees responsible' do 
+      tech_support.hire(jermajesty) 
+      tech_support.hire(chip)
+      customer_service.hire(inigo)
+      customer_service.hire(tyler) 
+
+      budget.add_department(customer_service)
+      budget.add_department(tech_support) 
+
+      jermajesty.expends(20)
+      chip.expends(15)
+      inigo.expends(10)
+      tyler.expends(35)
+
+      expected_1 = {
+                    jermajesty => 20, 
+                    chip => 15
+      }
+
+      expect(tech_support.employee_total_expenses).to eq(expected_1)
+
+       expected_2 = {
+                    inigo => 10, 
+                    tyler => 35
+      }
+
+      expect(customer_service.employee_total_expenses).to eq(expected_2)
+
+      expect(tech_support.department_track_expenses).to eq(35)
+      expect(tech_support.expenses).to eq(35)
+      expect(customer_service.department_track_expenses).to eq(45)
+      expect(customer_service.expenses).to eq(45)
+
+      expected_log = { 
+                        tech_support => {:department_employee_expenses => expected_1, :deparment_total_expenses => 35},
+                        customer_service => {:department_employee_expenses => expected_2, :deparment_total_expenses => 45}
+      }
+
+      expect(budget.department_expense_log).to eq(expected_log)
+    end
+  end
+
 end

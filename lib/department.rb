@@ -25,7 +25,6 @@ class Department
   end
 
   def department_track_expenses 
-   
     expense(employee_total_expenses.values.sum)
   end
 end
