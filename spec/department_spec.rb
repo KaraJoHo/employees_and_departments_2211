@@ -46,8 +46,9 @@ RSpec.describe Department do
       bobbi.expends(20)
       aaron.expends(35)
 
-      expected = {bobbi => 20, 
-                  aaron = >35
+      expected = {
+                  bobbi => 20, 
+                  aaron => 35
       }
 
       expect(customer_service.employee_total_expenses).to eq(expected)

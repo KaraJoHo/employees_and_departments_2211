@@ -14,4 +14,13 @@ class Department
   def expense(amount)
     @expenses += amount
   end
+
+  def employee_total_expenses 
+    total_expenses_hash = {}
+
+    @employees.each do |employee| 
+      total_expenses_hash[employee] = employee.total_expenses
+    end
+    total_expenses_hash
+  end
 end
