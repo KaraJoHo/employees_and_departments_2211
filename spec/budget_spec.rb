@@ -49,7 +49,7 @@ RSpec.describe Budget do
     end
   end
 
-  xdescribe '#employee_salaries' do 
+  describe '#employee_salaries' do 
     it 'can list all employees salaries' do 
       tech_support.hire(jermajesty) 
       tech_support.hire(chip)
