@@ -33,7 +33,7 @@ RSpec.describe Budget do
 
   describe '#less_than_500' do 
     it 'can list departments with expenses less than 500' do 
-      
+
       tech_support.hire(jermajesty) 
       tech_support.hire(chip)
       customer_service.hire(inigo)
@@ -41,6 +41,9 @@ RSpec.describe Budget do
 
       tech_support.expense(600)
       customer_service.expense(200)
+
+      budget.add_department(customer_service)
+      budget.add_department(tech_support)
 
       expect(budget.less_than_500).to eq([customer_service])
     end
