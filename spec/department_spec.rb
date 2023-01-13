@@ -37,4 +37,21 @@ RSpec.describe Department do
       expect(customer_service.expenses).to eq(125)
     end
   end
+
+  describe '#employee_total_expenses' do 
+    it 'is a list of employees total expenses' do 
+      customer_service.hire(bobbi)
+      customer_service.hire(aaron)
+
+      bobbi.expends(20)
+      aaron.expends(35)
+
+      expected = {bobbi => 20, 
+                  aaron = >35
+      }
+
+      expect(customer_service.employee_total_expenses).to eq(expected)
+
+    end
+  end
 end
