@@ -5,4 +5,8 @@ class Department
     @name = name 
     @employees = []
   end
+
+  def hire(employee) #array of employee objects
+    @employees << employee
+  end
 end
