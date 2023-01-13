@@ -21,4 +21,13 @@ RSpec.describe Employee do
       expect(bobbi.salary).to eq(105000)
     end
   end
+
+  describe '#expends' do #it4 
+    it 'is responsible for a certain expense' do 
+      expect(bobbi.total_expenses).to eq(0)
+
+      bobbi.expends(20)
+
+      expect(bobbi.total_expenses).to eq(20)
+    end
 end
