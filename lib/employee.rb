@@ -6,4 +6,8 @@ class Employee
     @age = attributes[:age].to_i
     @salary = attributes[:salary].delete('$').to_i
   end
+
+  def give_raise(amount)
+    @salary += amount
+  end
 end
