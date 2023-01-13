@@ -68,8 +68,10 @@ RSpec.describe Department do
                   aaron => 35
       }
 
-      expect(customer_service.employee_total_expenses).to eq(expected) 
+      expect(customer_service.employee_total_expenses).to eq(expected)
+      expect(customer_service.department_track_expenses).to eq(55)
       expect(customer_service.expenses).to eq(55)
+
     end
   end
 end
