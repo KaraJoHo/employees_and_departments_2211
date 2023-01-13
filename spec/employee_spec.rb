@@ -30,4 +30,5 @@ RSpec.describe Employee do
 
       expect(bobbi.total_expenses).to eq(20)
     end
+  end
 end
