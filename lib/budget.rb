@@ -15,4 +15,10 @@ class Budget
       department.expenses < 500
     end
   end
+
+  def all_employees 
+    @departments.flat_map do |department| 
+      department.employees
+    end
+  end
 end

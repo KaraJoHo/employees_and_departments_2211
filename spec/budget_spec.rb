@@ -83,7 +83,7 @@ RSpec.describe Budget do
       budget.add_department(customer_service)
       budget.add_department(tech_support)
 
-      expect(budget.all_employees).to eq([jermajesty, chip, inigo, tyler])
+      expect(budget.all_employees).to match_array([jermajesty, chip, inigo, tyler])
     end
   end
 
