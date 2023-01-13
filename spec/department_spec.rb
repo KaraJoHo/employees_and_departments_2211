@@ -38,7 +38,7 @@ RSpec.describe Department do
     end
   end
 
-  describe '#employee_total_expenses' do 
+  describe '#employee_total_expenses' do #it4
     it 'is a list of employees total expenses' do 
       customer_service.hire(bobbi)
       customer_service.hire(aaron)
@@ -55,7 +55,7 @@ RSpec.describe Department do
     end
   end
 
-  describe '#department_track_expenses' do 
+  describe '#department_track_expenses' do #it4
     it 'can track its employees expenses and return the total expense amount' do 
       customer_service.hire(bobbi)
       customer_service.hire(aaron)

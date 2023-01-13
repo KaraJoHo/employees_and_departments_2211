@@ -7,7 +7,7 @@ class Department
     @expenses = 0
   end
 
-  def hire(employee) #array of employee objects
+  def hire(employee) 
     @employees << employee
   end
 

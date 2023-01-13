@@ -87,7 +87,7 @@ RSpec.describe Budget do
     end
   end
 
-  describe '#department_expense_log' do 
+  describe '#department_expense_log' do #it4
     it 'tracks the departments expenses and employees responsible' do 
       tech_support.hire(jermajesty) 
       tech_support.hire(chip)
