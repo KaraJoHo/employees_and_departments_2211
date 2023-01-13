@@ -122,12 +122,11 @@ RSpec.describe Budget do
       expect(customer_service.expenses).to eq(45)
 
       expected_log = { 
-                        tech_support => {:department_employee_expenses => expected_1, :deparment_total_expenses => 35},
-                        customer_service => {:department_employee_expenses => expected_2, :deparment_total_expenses => 45}
+                        tech_support => {:department_employee_expenses => expected_1, :department_total_expenses => 35},
+                        customer_service => {:department_employee_expenses => expected_2, :department_total_expenses => 45}
       }
 
       expect(budget.department_expense_log).to eq(expected_log)
     end
   end
-
 end
