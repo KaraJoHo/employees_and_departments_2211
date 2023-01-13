@@ -21,12 +21,14 @@ RSpec.describe Budget do
   end
 
   describe 'departments/add_department' do 
-    expect(budget.departments).to eq([])
+      it 'has a list of departments and can add departments' do 
+      expect(budget.departments).to eq([])
 
-    budget.add_department(customer_service)
-    budget.add_department(tech_support)
+      budget.add_department(customer_service)
+      budget.add_department(tech_support)
 
-    expect(budget.departments).to eq([customer_service, tech_support])
+      expect(budget.departments).to eq([customer_service, tech_support])
+    end
   end
 
 end
